@@ -177,20 +177,23 @@ while (my $query_seq_obj = <$stream>) {
 
 if ($did_rc) {
     if ($VERBOSE) {
-        print STDERR "Note: At least one sequence have been reverse-complemented. \'\@revcomp@\' have been appended to the fasta header\n";
+        print STDERR "Note: At least one sequence have been reverse-complemented.\n";
+        print STDERR "      \'\@revcomp@\' have been appended to the fasta header.\n";
     }
 }
 
 if ($fail_file) {
     if (-z $fail_file) {
         if ($VERBOSE) {
-            print STDERR "Note: All sequences had hits with reference. Removing fail file \"$fail_file\"\n";
+            print STDERR "Note: All sequences had hits with reference.\n";
+            print STDERR "      Removing file \"$fail_file\".\n";
         }
         unlink $fail_file;
     }
     else {
         if ($VERBOSE) {
-            print STDERR "Warning: Some sequences did not have hits with reference. See fail file \"$fail_file\"\n";
+            print STDERR "Warning: Some sequences did not have hits with reference.\n";
+            print STDERR "         See file \'$fail_file\'\n";
         }
     }
 }
