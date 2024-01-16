@@ -19,7 +19,7 @@
                                     reference. If ref.fas is not
                                     given, the first sequence in input will
                                     be used as reference.
-               -o,--out=<out.fas>   Write to out.fas instead of STDOUT.
+               -o,--out=<out.fas>   Write to file out.fas instead of STDOUT.
                -f,--fail=<fail.fas> Sequences having 'No hit' with ref 
                                     sequence will be stored in fail.fas.
                -v,--version         Show version
