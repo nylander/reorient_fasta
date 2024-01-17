@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: ubuntu:22.04
+%files
+    ../src/reorient.pl /usr/local/bin/
+%post
+    chmod +x /usr/local/bin/reorient.pl
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update && apt-get -y upgrade
+    apt-get install -y ncbi-blast+ bioperl bioperl-run
+    rm -rf /var/lib/apt/lists/*
+    apt-get clean
+    unset DEBIAN_FRONTEND
+%environment
+    export LC_ALL=C
+%runscript
+    reorient.pl "$@"
+

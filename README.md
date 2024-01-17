@@ -1,6 +1,6 @@
 # Re-orient fasta sequences
 
-- Last modified: tis jan 16, 2024  06:41
+- Last modified: ons jan 17, 2024  11:35
 - Sign: nylander
 
 ## Description
@@ -38,7 +38,7 @@ written to an (optional) file (see [Options](#options)).
 * `-V, --verbose` Be verbose about input/output. `--noverbose` will turn off
   extra printing.
 
-## Dependencies
+## Dependencies and Installation
 
 The script uses perl, perldoc and perl module StandAloneBlastPlus.pm. In
 addition, ncbi-blast+ ("stand-alone blast") needs to be installed.
@@ -46,6 +46,15 @@ addition, ncbi-blast+ ("stand-alone blast") needs to be installed.
 On a deb-based Linux system, they can be installed using:
 
     $ sudo apt install ncbi-blast+ bioperl bioperl-run
+
+In addition, a definintion file for building a
+[singularity/apptainer](https://apptainer.org/) container is provided.  The
+reorient.pl script with all depedencies can then be installed as a stand-alone
+singularity image file (approx 450M). For example:
+
+    $ cd singularity
+    $ sudo singularity build reorient.sif reorient.def
+    $ ./reorient.sif -h
 
 ## Notes
 
